@@ -1,0 +1,99 @@
+{
+  "trickster_version": "1.0.0",
+  "report_generated_at": "2026-06-17T02:10:06.445360+00:00",
+  "session": {
+    "id": "e3e03930-e6a3-43ac-9b81-450715436132",
+    "target_url": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+    "started_at": "2026-06-17T02:09:48.064742",
+    "finished_at": "2026-06-17T02:10:06.433277",
+    "status": "completed",
+    "ai_provider": "anthropic",
+    "ai_model": "claude-sonnet-4-6",
+    "total_requests": 2,
+    "total_findings": 5,
+    "severity_summary": {
+      "critical": 2,
+      "high": 1,
+      "medium": 2,
+      "low": 0,
+      "informational": 0
+    }
+  },
+  "findings": [
+    {
+      "id": "6052f875-70c1-476e-9379-0041243a4061",
+      "title": "Senha em URL via GET",
+      "description": "A senha está sendo enviada como parâmetro na URL via método GET, o que é uma prática insegura pois a senha pode ser armazenada em logs de servidor e pode ser interceptada por atacantes.",
+      "vulnerability_type": "exposed_token",
+      "severity": "critical",
+      "evidence": "pw=teste",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/saveprofile?action=new&uid=testeteste&pw=teste&is_author=True",
+      "recommendation": "Evite enviar senhas como parâmetros na URL. Em vez disso, use métodos POST ou PUT e envie as credenciais no corpo da requisição. Além disso, use criptografia para proteger as credenciais.",
+      "references": [
+        "https://owasp.org/Top10/A07_2021-Security_Misconfiguration/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T02:10:06.404460"
+    },
+    {
+      "id": "6f17749e-8e78-4521-9d43-49bf37a2249d",
+      "title": "Parâmetro controlando privilégio",
+      "description": "O parâmetro 'is_author' está sendo usado para controlar o privilégio do usuário, o que pode ser uma vulnerabilidade de controle de acesso.",
+      "vulnerability_type": "authz_failure",
+      "severity": "critical",
+      "evidence": "is_author=True",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/saveprofile?action=new&uid=testeteste&pw=teste&is_author=True",
+      "recommendation": "Evite usar parâmetros para controlar privilégios. Em vez disso, use um sistema de autenticação e autorização robusto para controlar o acesso aos recursos.",
+      "references": [
+        "https://owasp.org/Top10/A01_2021-Broken_Access_Control/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T02:10:06.404484"
+    },
+    {
+      "id": "218569da-a620-4964-b7f1-f0bef446e90c",
+      "title": "ID numérico sequencial em URL",
+      "description": "O ID '451869608631429411124020731956514219612' está sendo usado como parâmetro na URL, o que pode ser uma vulnerabilidade de IDOR (Insecure Direct Object Reference).",
+      "vulnerability_type": "idor",
+      "severity": "high",
+      "evidence": "451869608631429411124020731956514219612",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Evite usar IDs numéricos sequenciais em URLs. Em vez disso, use IDs aleatórios ou tokens para identificar os recursos.",
+      "references": [
+        "https://owasp.org/Top10/A04_2021-Broken_Access_Control/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T02:10:06.404495"
+    },
+    {
+      "id": "54e782a6-d1f8-4deb-83e6-0f882e1ed0d5",
+      "title": "Header X-XSS-Protection ausente ou desabilitado",
+      "description": "O header X-XSS-Protection está ausente ou desabilitado, o que pode permitir ataques de XSS (Cross-Site Scripting).",
+      "vulnerability_type": "insecure_headers",
+      "severity": "medium",
+      "evidence": "x-xss-protection: 0",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Habilite o header X-XSS-Protection e defina-o como '1; mode=block' para proteger contra ataques de XSS.",
+      "references": [
+        "https://owasp.org/Top10/A07_2021-Security_Misconfiguration/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T02:10:06.404511"
+    },
+    {
+      "id": "d82f191e-5547-4c76-af1f-6a4f5d746e8a",
+      "title": "Header Content-Security-Policy ausente",
+      "description": "O header Content-Security-Policy está ausente, o que pode permitir ataques de XSS (Cross-Site Scripting).",
+      "vulnerability_type": "insecure_headers",
+      "severity": "medium",
+      "evidence": "Não encontrado",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Defina o header Content-Security-Policy para especificar as fontes permitidas de conteúdo.",
+      "references": [
+        "https://owasp.org/Top10/A07_2021-Security_Misconfiguration/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T02:10:06.404521"
+    }
+  ]
+}

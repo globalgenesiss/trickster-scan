@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: trickster-scanner
+Version: 1.0.0
+Summary: HTTP Analysis & Vulnerability Scanner powered by AI
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown

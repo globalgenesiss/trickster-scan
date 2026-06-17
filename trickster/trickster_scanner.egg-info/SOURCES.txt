@@ -1,0 +1,6 @@
+pyproject.toml
+trickster_scanner.egg-info/PKG-INFO
+trickster_scanner.egg-info/SOURCES.txt
+trickster_scanner.egg-info/dependency_links.txt
+trickster_scanner.egg-info/entry_points.txt
+trickster_scanner.egg-info/top_level.txt

@@ -1,0 +1,99 @@
+{
+  "trickster_version": "1.0.0",
+  "report_generated_at": "2026-06-17T04:37:20.976069+00:00",
+  "session": {
+    "id": "4019a347-ae88-4d68-ad37-055a05f644f1",
+    "target_url": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+    "started_at": "2026-06-17T04:36:56.228804",
+    "finished_at": "2026-06-17T04:37:20.965941",
+    "status": "completed",
+    "ai_provider": "anthropic",
+    "ai_model": "claude-sonnet-4-6",
+    "total_requests": 1,
+    "total_findings": 5,
+    "severity_summary": {
+      "critical": 0,
+      "high": 2,
+      "medium": 2,
+      "low": 1,
+      "informational": 0
+    }
+  },
+  "findings": [
+    {
+      "id": "4f484a05-72f5-454e-ae1a-9db94bb0ae4d",
+      "title": "ID numérico sequencial em URL",
+      "description": "O parâmetro '451869608631429411124020731956514219612' na URL pode ser um ID numérico sequencial, o que pode permitir a exploração de recursos de outros usuários (IDOR).",
+      "vulnerability_type": "idor",
+      "severity": "high",
+      "evidence": "451869608631429411124020731956514219612",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Utilizar um mecanismo de identificação de recursos mais seguro, como um token aleatório ou um UUID.",
+      "references": [
+        "https://owasp.org/www-project-top-ten/2017/A4_2017-Broken_Access_Control"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T04:37:20.940967"
+    },
+    {
+      "id": "41ac155c-e0db-4fea-959f-b59da3e64142",
+      "title": "Endpoint /newaccount.gtl exposto",
+      "description": "O endpoint /newaccount.gtl está exposto e pode ser acessado por qualquer usuário, o que pode ser utilizado para ataques de exploração de recursos.",
+      "vulnerability_type": "admin_endpoint",
+      "severity": "high",
+      "evidence": "/newaccount.gtl",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Restringir o acesso ao endpoint /newaccount.gtl apenas para usuários autorizados.",
+      "references": [
+        "https://owasp.org/www-project-top-ten/2017/A4_2017-Broken_Access_Control"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T04:37:20.941020"
+    },
+    {
+      "id": "4ef62731-7fda-4f2c-b9b2-4b44b72d5d97",
+      "title": "Header X-Frame-Options ausente",
+      "description": "A ausência do header X-Frame-Options pode permitir que o site seja incorporado em um iframe por outro site, o que pode ser utilizado para ataques de Clickjacking.",
+      "vulnerability_type": "insecure_headers",
+      "severity": "medium",
+      "evidence": "X-Frame-Options não encontrado nos headers de resposta",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Adicionar o header X-Frame-Options com o valor 'DENY' ou 'SAMEORIGIN' para evitar a incorporação do site em iframes.",
+      "references": [
+        "https://owasp.org/www-project-secure-headers/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T04:37:20.940990"
+    },
+    {
+      "id": "f70c12cb-af8a-4b82-b71d-fa8007cf7b9d",
+      "title": "Header HSTS ausente",
+      "description": "A ausência do header HSTS (HTTP Strict Transport Security) pode permitir que o site seja acessado via HTTP, o que pode ser utilizado para ataques de interceptação de tráfego.",
+      "vulnerability_type": "insecure_headers",
+      "severity": "medium",
+      "evidence": "HSTS não encontrado nos headers de resposta",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Adicionar o header HSTS com o valor 'max-age=31536000; includeSubDomains' para forçar o acesso ao site via HTTPS.",
+      "references": [
+        "https://owasp.org/www-project-secure-headers/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T04:37:20.941001"
+    },
+    {
+      "id": "55f51ef9-351c-462b-9edc-8f0097a74bc0",
+      "title": "Header X-Content-Type-Options ausente",
+      "description": "A ausência do header X-Content-Type-Options pode permitir que o site seja vulnerável a ataques de MIME-sniffing.",
+      "vulnerability_type": "insecure_headers",
+      "severity": "low",
+      "evidence": "X-Content-Type-Options não encontrado nos headers de resposta",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Adicionar o header X-Content-Type-Options com o valor 'nosniff' para evitar a detecção de tipos de conteúdo.",
+      "references": [
+        "https://owasp.org/www-project-secure-headers/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T04:37:20.941011"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trickster Security Report — https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl</title>
+<style>
+  :root {
+    --bg: #0f172a; --surface: #1e293b; --border: #334155;
+    --text: #f1f5f9; --muted: #94a3b8;
+    --critical: #dc2626; --high: #ea580c;
+    --medium: #d97706; --low: #2563eb; --info: #6b7280;
+    --code-bg: #0f172a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; padding: 2rem; }
+  .header { border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+  .header h1 { font-size: 1.75rem; font-weight: 700; color: #38bdf8; }
+  .header .meta { color: var(--muted); font-size: 0.875rem; margin-top: 0.5rem; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center; }
+  .stat-card .count { font-size: 2rem; font-weight: 700; }
+  .stat-card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.25rem; }
+  .stat-card.critical .count { color: var(--critical); }
+  .stat-card.high .count { color: var(--high); }
+  .stat-card.medium .count { color: var(--medium); }
+  .stat-card.low .count { color: var(--low); }
+  .stat-card.info .count { color: var(--info); }
+  .finding { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--border); }
+  .finding.critical { border-left-color: var(--critical); }
+  .finding.high { border-left-color: var(--high); }
+  .finding.medium { border-left-color: var(--medium); }
+  .finding.low { border-left-color: var(--low); }
+  .finding.informational { border-left-color: var(--info); }
+  .finding-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+  .finding-title { font-size: 1.1rem; font-weight: 600; }
+  .badge { font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 999px; white-space: nowrap; }
+  .badge.critical { background: #450a0a; color: var(--critical); }
+  .badge.high { background: #431407; color: var(--high); }
+  .badge.medium { background: #451a03; color: var(--medium); }
+  .badge.low { background: #172554; color: var(--low); }
+  .badge.informational { background: #1c1917; color: var(--info); }
+  .field-label { font-size: 0.75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.375rem; margin-top: 1rem; }
+  .field-value { color: var(--text); line-height: 1.6; }
+  .endpoint { font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 0.875rem; color: #38bdf8; word-break: break-all; }
+  .evidence { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 0.8rem; white-space: pre-wrap; word-break: break-all; color: #7dd3fc; overflow-x: auto; max-height: 300px; overflow-y: auto; }
+  .refs a { color: #38bdf8; text-decoration: none; display: block; font-size: 0.875rem; }
+  .refs a:hover { text-decoration: underline; }
+  .section-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text); }
+  .no-findings { text-align: center; padding: 3rem; color: var(--muted); }
+  footer { margin-top: 3rem; text-align: center; color: var(--muted); font-size: 0.75rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🦅 Trickster Security Report</h1>
+  <div class="meta">
+    <strong>Target:</strong> https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl &nbsp;|&nbsp;
+    <strong>Session:</strong> e3e03930-e6a3-43ac-9b81-450715436132 &nbsp;|&nbsp;
+    <strong>Date:</strong> 2026-06-17 02:10 UTC &nbsp;|&nbsp;
+    <strong>Model:</strong> claude-sonnet-4-6
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat-card">
+    <div class="count" style="color: #38bdf8">2</div>
+    <div class="label">Requests</div>
+  </div>
+  <div class="stat-card">
+    <div class="count" style="color: #38bdf8">5</div>
+    <div class="label">Findings</div>
+  </div>
+  <div class="stat-card critical">
+    <div class="count">2</div>
+    <div class="label">Critical</div>
+  </div>
+  <div class="stat-card high">
+    <div class="count">1</div>
+    <div class="label">High</div>
+  </div>
+  <div class="stat-card medium">
+    <div class="count">2</div>
+    <div class="label">Medium</div>
+  </div>
+  <div class="stat-card low">
+    <div class="count">0</div>
+    <div class="label">Low</div>
+  </div>
+  <div class="stat-card info">
+    <div class="count">0</div>
+    <div class="label">Info</div>
+  </div>
+</div>
+
+<div class="section-title">Findings</div>
+<div class="finding critical">
+  <div class="finding-header">
+    <div class="finding-title">Senha em URL via GET</div>
+    <span class="badge critical">🔴 CRITICAL</span>
+  </div>
+  <div class="field-label">Description</div>
+  <div class="field-value">A senha está sendo enviada como parâmetro na URL via método GET, o que é uma prática insegura pois a senha pode ser armazenada em logs de servidor e pode ser interceptada por atacantes.</div>
+  <div class="field-label">Affected Endpoint</div>
+  <div class="endpoint">https://google-gruyere.appspot.com/451869608631429411124020731956514219612/saveprofile?action=new&amp;uid=testeteste&amp;pw=teste&amp;is_author=True</div>
+  <div class="field-label">Evidence</div>
+  <div class="evidence">pw=teste</div>
+  <div class="field-label">Recommendation</div>
+  <div class="field-value">Evite enviar senhas como parâmetros na URL. Em vez disso, use métodos POST ou PUT e envie as credenciais no corpo da requisição. Além disso, use criptografia para proteger as credenciais.</div>
+  <div class="field-label">References</div><div class="refs">    <a href="https://owasp.org/Top10/A07_2021-Security_Misconfiguration/" target="_blank" rel="noopener">https://owasp.org/Top10/A07_2021-Security_Misconfiguration/</a></div>
+</div>
+<div class="finding critical">
+  <div class="finding-header">
+    <div class="finding-title">Parâmetro controlando privilégio</div>
+    <span class="badge critical">🔴 CRITICAL</span>
+  </div>
+  <div class="field-label">Description</div>
+  <div class="field-value">O parâmetro &#39;is_author&#39; está sendo usado para controlar o privilégio do usuário, o que pode ser uma vulnerabilidade de controle de acesso.</div>
+  <div class="field-label">Affected Endpoint</div>
+  <div class="endpoint">https://google-gruyere.appspot.com/451869608631429411124020731956514219612/saveprofile?action=new&amp;uid=testeteste&amp;pw=teste&amp;is_author=True</div>
+  <div class="field-label">Evidence</div>
+  <div class="evidence">is_author=True</div>
+  <div class="field-label">Recommendation</div>
+  <div class="field-value">Evite usar parâmetros para controlar privilégios. Em vez disso, use um sistema de autenticação e autorização robusto para controlar o acesso aos recursos.</div>
+  <div class="field-label">References</div><div class="refs">    <a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/" target="_blank" rel="noopener">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a></div>
+</div>
+<div class="finding high">
+  <div class="finding-header">
+    <div class="finding-title">ID numérico sequencial em URL</div>
+    <span class="badge high">🟠 HIGH</span>
+  </div>
+  <div class="field-label">Description</div>
+  <div class="field-value">O ID &#39;451869608631429411124020731956514219612&#39; está sendo usado como parâmetro na URL, o que pode ser uma vulnerabilidade de IDOR (Insecure Direct Object Reference).</div>
+  <div class="field-label">Affected Endpoint</div>
+  <div class="endpoint">https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl</div>
+  <div class="field-label">Evidence</div>
+  <div class="evidence">451869608631429411124020731956514219612</div>
+  <div class="field-label">Recommendation</div>
+  <div class="field-value">Evite usar IDs numéricos sequenciais em URLs. Em vez disso, use IDs aleatórios ou tokens para identificar os recursos.</div>
+  <div class="field-label">References</div><div class="refs">    <a href="https://owasp.org/Top10/A04_2021-Broken_Access_Control/" target="_blank" rel="noopener">https://owasp.org/Top10/A04_2021-Broken_Access_Control/</a></div>
+</div>
+<div class="finding medium">
+  <div class="finding-header">
+    <div class="finding-title">Header X-XSS-Protection ausente ou desabilitado</div>
+    <span class="badge medium">🟡 MEDIUM</span>
+  </div>
+  <div class="field-label">Description</div>
+  <div class="field-value">O header X-XSS-Protection está ausente ou desabilitado, o que pode permitir ataques de XSS (Cross-Site Scripting).</div>
+  <div class="field-label">Affected Endpoint</div>
+  <div class="endpoint">https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl</div>
+  <div class="field-label">Evidence</div>
+  <div class="evidence">x-xss-protection: 0</div>
+  <div class="field-label">Recommendation</div>
+  <div class="field-value">Habilite o header X-XSS-Protection e defina-o como &#39;1; mode=block&#39; para proteger contra ataques de XSS.</div>
+  <div class="field-label">References</div><div class="refs">    <a href="https://owasp.org/Top10/A07_2021-Security_Misconfiguration/" target="_blank" rel="noopener">https://owasp.org/Top10/A07_2021-Security_Misconfiguration/</a></div>
+</div>
+<div class="finding medium">
+  <div class="finding-header">
+    <div class="finding-title">Header Content-Security-Policy ausente</div>
+    <span class="badge medium">🟡 MEDIUM</span>
+  </div>
+  <div class="field-label">Description</div>
+  <div class="field-value">O header Content-Security-Policy está ausente, o que pode permitir ataques de XSS (Cross-Site Scripting).</div>
+  <div class="field-label">Affected Endpoint</div>
+  <div class="endpoint">https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl</div>
+  <div class="field-label">Evidence</div>
+  <div class="evidence">Não encontrado</div>
+  <div class="field-label">Recommendation</div>
+  <div class="field-value">Defina o header Content-Security-Policy para especificar as fontes permitidas de conteúdo.</div>
+  <div class="field-label">References</div><div class="refs">    <a href="https://owasp.org/Top10/A07_2021-Security_Misconfiguration/" target="_blank" rel="noopener">https://owasp.org/Top10/A07_2021-Security_Misconfiguration/</a></div>
+</div>
+
+<footer>Generated by Trickster v1.0.0 — Passive HTTP Analysis &amp; Vulnerability Scanner</footer>
+</body>
+</html>

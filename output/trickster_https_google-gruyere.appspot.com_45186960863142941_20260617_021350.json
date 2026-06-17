@@ -1,0 +1,99 @@
+{
+  "trickster_version": "1.0.0",
+  "report_generated_at": "2026-06-17T02:13:50.340935+00:00",
+  "session": {
+    "id": "a459d9fe-5339-4ab3-9e97-4b31efea3960",
+    "target_url": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+    "started_at": "2026-06-17T02:13:30.330902",
+    "finished_at": "2026-06-17T02:13:50.330702",
+    "status": "completed",
+    "ai_provider": "anthropic",
+    "ai_model": "claude-sonnet-4-6",
+    "total_requests": 2,
+    "total_findings": 5,
+    "severity_summary": {
+      "critical": 2,
+      "high": 1,
+      "medium": 2,
+      "low": 0,
+      "informational": 0
+    }
+  },
+  "findings": [
+    {
+      "id": "f587f4de-bf22-41ef-b8bd-fde31b941dd5",
+      "title": "Senha em URL via GET",
+      "description": "A senha está sendo enviada como parâmetro na URL via método GET, o que é uma prática insegura pois a senha pode ser armazenada em logs de servidor e pode ser interceptada por atacantes.",
+      "vulnerability_type": "exposed_token",
+      "severity": "critical",
+      "evidence": "pw=12231213312",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/saveprofile?action=new&uid=123123&pw=12231213312&is_author=True",
+      "recommendation": "Evite enviar senhas como parâmetros na URL. Em vez disso, use o método POST e envie a senha no corpo da requisição.",
+      "references": [
+        "https://owasp.org/Top10/A07_2021-Security_Misconfiguration/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T02:13:50.307601"
+    },
+    {
+      "id": "ef807e4f-3121-415b-a9ad-d6ad7aff6357",
+      "title": "Parâmetro controlando privilégio",
+      "description": "O parâmetro 'is_author' está sendo usado para controlar o privilégio do usuário, o que pode ser uma vulnerabilidade de controle de acesso.",
+      "vulnerability_type": "authz_failure",
+      "severity": "critical",
+      "evidence": "is_author=True",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/saveprofile?action=new&uid=123123&pw=12231213312&is_author=True",
+      "recommendation": "Verifique se o parâmetro 'is_author' está sendo validado corretamente e se o controle de acesso está sendo implementado de forma segura.",
+      "references": [
+        "https://owasp.org/Top10/A01_2021-Broken_Access_Control/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T02:13:50.307626"
+    },
+    {
+      "id": "05a5e5ed-2884-4573-9749-e165f8d15295",
+      "title": "ID numérico sequencial em URL",
+      "description": "O ID numérico sequencial está sendo usado na URL, o que pode permitir ataques de injeção de dependência (IDOR).",
+      "vulnerability_type": "idor",
+      "severity": "high",
+      "evidence": "451869608631429411124020731956514219612",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Use um identificador não sequencial e valide as solicitações para evitar ataques de IDOR.",
+      "references": [
+        "https://owasp.org/Top10/A01_2021-Broken_Access_Control/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T02:13:50.307669"
+    },
+    {
+      "id": "6745c3d2-df31-4824-b47b-8144b22958c3",
+      "title": "Header X-XSS-Protection ausente ou desabilitado",
+      "description": "O header X-XSS-Protection está ausente ou desabilitado, o que pode permitir ataques de cross-site scripting (XSS).",
+      "vulnerability_type": "insecure_headers",
+      "severity": "medium",
+      "evidence": "x-xss-protection: 0",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Habilite o header X-XSS-Protection e configure-o para bloquear ataques de XSS.",
+      "references": [
+        "https://owasp.org/Top10/A07_2021-Security_Misconfiguration/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T02:13:50.307640"
+    },
+    {
+      "id": "b47acc46-d1aa-438b-9a53-a10ec739181d",
+      "title": "Header Content-Security-Policy (CSP) ausente",
+      "description": "O header Content-Security-Policy (CSP) está ausente, o que pode permitir ataques de cross-site scripting (XSS).",
+      "vulnerability_type": "insecure_headers",
+      "severity": "medium",
+      "evidence": "Não há header CSP",
+      "affected_endpoint": "https://google-gruyere.appspot.com/451869608631429411124020731956514219612/newaccount.gtl",
+      "recommendation": "Implemente o header CSP para definir as fontes de conteúdo permitidas.",
+      "references": [
+        "https://owasp.org/Top10/A07_2021-Security_Misconfiguration/"
+      ],
+      "false_positive_likelihood": "low",
+      "timestamp": "2026-06-17T02:13:50.307655"
+    }
+  ]
+}

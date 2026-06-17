@@ -1,0 +1,43 @@
+# ============================================================
+# trickster - HTTP Analysis & Vulnerability Scanner
+# requirements.txt — dependências do projeto
+# ============================================================
+
+# --- Captura de tráfego ---
+playwright==1.44.0           # Automação de browser com suporte nativo ao CDP
+mitmproxy==10.2.4            # Proxy MITM para interceptação HTTPS
+
+# --- Banco de dados ---
+sqlalchemy==2.0.30           # ORM compatível com SQLite e PostgreSQL
+alembic==1.13.1              # Migrações de banco de dados
+aiosqlite==0.20.0            # Driver assíncrono para SQLite
+
+# --- Integração com IA ---
+anthropic==0.26.1            # SDK oficial da Anthropic (Claude)
+openai==1.30.1               # SDK oficial da OpenAI (alternativa)
+tiktoken==0.7.0              # Contagem de tokens para controle de custo
+
+# --- CLI ---
+click==8.1.7                 # Framework para construção de CLIs
+rich==13.7.1                 # Output rico no terminal (tabelas, cores, spinners)
+prompt-toolkit==3.0.46       # Input interativo no terminal
+
+# --- Relatórios ---
+jinja2==3.1.4                # Templates para relatórios HTML e Markdown
+weasyprint==61.2             # Geração de PDF a partir de HTML (opcional)
+
+# --- Utilitários ---
+python-dotenv==1.0.1         # Carregamento de variáveis de ambiente
+pydantic==2.7.1              # Validação e serialização de modelos de dados
+pydantic-settings==2.2.1     # Settings com validação via Pydantic
+httpx==0.27.0                # Cliente HTTP assíncrono
+structlog==24.1.0            # Logs estruturados em JSON
+python-jose==3.3.0           # Decodificação e análise de JWTs
+cryptography==42.0.7         # Suporte criptográfico para python-jose
+tldextract==5.1.2            # Extração de domínio, subdomínio e TLD de URLs
+certifi==2024.2.2            # Bundle de certificados CA atualizados
+
+# --- Desenvolvimento e testes ---
+pytest==8.2.0                # Framework de testes
+pytest-asyncio==0.23.6       # Suporte assíncrono no pytest
+pytest-cov==5.0.0            # Cobertura de testes
