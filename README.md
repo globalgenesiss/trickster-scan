@@ -80,7 +80,7 @@ No final gera um relatório em HTML, JSON e Markdown.
 
 git clone https://github.com/globalgenesiss/trickster-scan.git
 
-cd trickster-scan
+cd trickster-scanner
 
 
 
