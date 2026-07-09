@@ -1,3 +1,6 @@
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/904afe0357a5457eb0c049f1de799d8c)](https://app.codacy.com/gh/globalgenesiss/trickster-scan?utm_source=github.com&utm_medium=referral&utm_content=globalgenesiss/trickster-scan&utm_campaign=Badge_Grade)
+
 \#  TRICKSTER
 
 
